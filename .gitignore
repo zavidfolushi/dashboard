@@ -1,1 +1,22 @@
-node_modules/
+userApi/node_modules/
+webdashboard/node_modules/
+
+userApi/.pnp
+.pnp.js
+
+# testing
+userApi/coverage
+
+# production
+userApi/build
+
+# misc
+userApi/.DS_Store
+userApi/.env.local
+userApi/.env.development.local
+userApi/.env.test.local
+userApi/.env.production.local
+
+userApi/npm-debug.log*
+userApi/yarn-debug.log*
+userApi/yarn-error.log*
