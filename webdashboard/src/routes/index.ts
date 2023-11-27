@@ -9,5 +9,5 @@ export interface IRoute {
 
 export const routes: IRoute[] = [
   { path: "/", component: Dashboard},
-  { path: "/user/:email", component: UserProfile },
+  { path: "/:fullName", component: UserProfile },
 ];

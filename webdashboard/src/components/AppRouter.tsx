@@ -3,7 +3,6 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { routes } from '../routes';
 
 const AppRouter: FC = () => {
-    console.log(routes)
     return (
         <Routes>
             {routes.map(route =>

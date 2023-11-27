@@ -1,0 +1,37 @@
+.card{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  align-items: center;
+  border-radius: 1.25rem;
+  background: var(--Almost-White, #FAFAFA);
+  transition: .2s all;
+  &__img{
+    width: 200px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__name{
+    margin-bottom: .5rem;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  &__email{
+    font-size: 16px;
+    font-weight: 400;
+    opacity: .7;
+  }
+  &:hover{
+    box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.75);
+  }
+}

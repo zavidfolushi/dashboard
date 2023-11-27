@@ -1,8 +1,12 @@
 import AppRouter from './components/AppRouter';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
-    <AppRouter />
+    <>
+      <Navigation/>
+      <AppRouter />
+    </>
   );
 }
 
