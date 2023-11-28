@@ -69,7 +69,20 @@ app.get('/api/customers/:fullName', (req, res) => {
   }
 });
 
-app.get('/api/orders', (req, res) => res.json(orders));
+app.get('/api/orders', (req, res) => {
+  const { limit } = req.query;
+  let results = orders;
+
+  if (limit) {
+    const limitNum = parseInt(limit, 10);
+    if (!isNaN(limitNum)) {
+      results = results.slice(0, limitNum);
+    }
+  }
+
+  res.json(results);
+});
+
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);

@@ -50,7 +50,7 @@ const Dashboard: FC = () => {
   };
 
   return (
-    <div className='container mx-auto justify-center pt-8'>
+    <>
       <div className='flex gap-5'>
       <input
         type="text"
@@ -93,8 +93,8 @@ const Dashboard: FC = () => {
         {data && data.map((user: IUsers) => <UserCard key={user.email} user={user} />)}
         {data && data.length < 1 && <p className='text-center'> There is no user for this request </p>}
       {isFetching && <p className='text-center'>Loading more...</p>}
-    </div>
-    </div>
+      </div>
+    </>
   );
 };
 

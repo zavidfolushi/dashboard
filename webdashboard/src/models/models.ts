@@ -10,3 +10,13 @@ export interface IUsers {
   street: string;
   streetNumber: string;
 }
+
+export interface IOrders {
+  number: number;
+  price: number;
+  currency: string;
+  itemName: string;
+  amount: number;
+  createdAt: number;
+  shippedAt: number;
+}
