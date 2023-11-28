@@ -20,6 +20,9 @@
     border-bottom: 1px solid #E3E3E3;
     padding: .5rem 1rem;
     font-size: 22px;
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
   }
   &__number{
     font-weight: 600;
@@ -32,6 +35,9 @@
   }
   &__product{
     font-size: 22px;
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
   }
   &__date{
     margin-top: 2rem;
@@ -40,5 +46,8 @@
     font-size: 18px;
     width: fit-content;
     margin: 0 0 0 auto;
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
   }
 }

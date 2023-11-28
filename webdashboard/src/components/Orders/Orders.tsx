@@ -12,12 +12,18 @@ export interface OrdersProps{
 
 const Orders: FC<OrdersProps> = ({ orders, error, loading, onScrollEnd }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleScroll = () => {
     if (containerRef.current) {
       const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
       if (scrollTop + clientHeight >= scrollHeight - 10) {
-        onScrollEnd();
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+        }
+        timeoutRef.current = setTimeout(() => {
+          onScrollEnd();
+        }, 100);
       }
     }
   };
@@ -31,14 +37,18 @@ const Orders: FC<OrdersProps> = ({ orders, error, loading, onScrollEnd }) => {
       if (container) {
         container.removeEventListener('scroll', handleScroll);
       }
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
   }, []);
-
   return (
     <div className='w-full'>
       <h1 className="text-4xl font-bold mb-12 uppercase">Orders</h1>
       <div className={styles.order} ref={containerRef}>
-        {orders.map(order => <OrderItem key={order.number} order={order}/>)}
+        {loading && <div>Loading...</div>}
+        {error && <div>Something went wrong...</div>}
+        {orders && orders.map(order => <OrderItem key={order.number} order={order} />)}
       </div>
     </div>
   );

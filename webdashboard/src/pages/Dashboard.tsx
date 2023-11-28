@@ -51,42 +51,42 @@ const Dashboard: FC = () => {
 
   return (
     <>
-      <div className='flex gap-5'>
-      <input
-        type="text"
-        className='border border-cyan-900 py-2 px-4 w-full w-[300px]'
-        placeholder='Search customers...'
-        value={searchTerm}
-        onChange={handleSearchChange}
+      <div className='flex flex-wrap gap-5 px-2'>
+        <input
+          type="text"
+          className='border border-cyan-900 py-2 px-4 w-full sm:w-[300px]'
+          placeholder='Search customers...'
+          value={searchTerm}
+          onChange={handleSearchChange}
         />
         <select
           onChange={handleGenderChange}
-          className="border border-cyan-900 py-2 px-4 w-full w-[300px]"
+          className="border border-cyan-900 py-2 px-4 w-full sm:w-[300px]"
           value={genderFilter}
         >
           <option value="">All Genders</option>
           {gendersData && gendersData.map(gender => (
             <option key={gender} value={gender}>{gender}</option>
           ))}
-        </select>  
+        </select>
         <select
           onChange={handleCountryChange}
-          className="border border-cyan-900 py-2 px-4 w-full w-[300px]"
+          className="border border-cyan-900 py-2 px-4 w-full sm:w-[300px]"
           value={countryFilter}
         >
           <option value="">All Countries</option>
           {countryData && countryData.map(country => (
             <option key={country} value={country}>{country}</option>
           ))}
-        </select>  
+        </select>
         <button
           onClick={clearFilters}
-          className="bg-cyan-500 hover:bg-cyan-600 text-white py-1 px-4 rounded shadow-lg hover:shadow-xl transition duration-200"
+          className="bg-cyan-500 hover:bg-cyan-600 text-white py-2 px-4 rounded shadow-lg hover:shadow-xl transition duration-200 w-full sm:w-auto"
         >
           Clear filters
         </button>
-
       </div>
+
       <div className='justify-center mx-auto flex flex-wrap gap-8 mt-12 mb-12'>
       {isLoading && <p className='text-center'>Loading...</p>}
       {isError && <p className='text-center'>Something went wrong...</p>}
